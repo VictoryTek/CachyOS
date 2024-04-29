@@ -190,7 +190,6 @@ PKGS=(
 'mono'
 'ncdu'
 'meson'
-'onboard'
 'popsicle'
 'prismlauncher'
 'progress'
