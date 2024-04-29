@@ -138,13 +138,15 @@ function debloat() {
 	sleep 6s
 
 	PKGS=(
-	'totem'
+    'alpm_octopi_utils'
+    'totem'
     'totem-pl-parser'
     'cachyos-fish-config'
     'fish'
     'fish-autopair'
     'fish-pure-prompt'
     'fisher'
+    'octopi'
 
 	)
 
