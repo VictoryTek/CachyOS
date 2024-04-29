@@ -138,14 +138,8 @@ function debloat() {
 	sleep 6s
 
 	PKGS=(
-    'alpm_octopi_utils'
     'totem'
-    'totem-pl-parser'
     'cachyos-fish-config'
-    'fish'
-    'fish-autopair'
-    'fish-pure-prompt'
-    'fisher'
     'octopi'
 
 	)
@@ -178,6 +172,7 @@ PKGS=(
 'dconf-editor'
 'discord'
 'filelight'
+'flatpak'
 'ttf-fira-code'
 'gamemode'
 'gimp' # Photo editing
@@ -209,8 +204,6 @@ PKGS=(
 'gnome-shell-extension-caffeine'
 'gnome-shell-extension-vitals'
 'gnome-shell-extension-gnome-ui-tune-git'
-'gnome-shell-extension-tiling-assistant'
-
 
 )
 
@@ -219,22 +212,31 @@ for PKG in "${PKGS[@]}"; do
     sudo pacman -S "$PKG" --noconfirm
 done
 
+}
+
 # Installing AUR Packages
+function aur() {
 PKGS=(
 'autojump'
 'bibata-cursor-theme'
 'gydl-git'
-
+'pamac-aur'
+'pamac-cli'
+'gnome-shell-extension-tiling-assistant'
 
 )
 
 for PKG in "${PKGS[@]}"; do
     echo "INSTALLING: ${PKG}"
-    sudo yay -S "$PKG" --noconfirm
+    yay -S "$PKG" --noconfirm
 done
 	
+}
+
 	# Flatpaks
-	flatpak install flathub io.github.shiftey.Desktop --noconfirm
+	function flatpak() {
+    flatpak install flathub io.github.shiftey.Desktop --noconfirm
+    flatpak install flathub com.mattjakeman.ExtensionManager --noconfirm
 	flatpak install flathub com.simplenote.Simplenote --noconfirm
     flatpak install flathub com.vscodium.codium --noconfirm
 	sleep 3s
@@ -323,6 +325,8 @@ greeting
 update
 debloat
 install
+aur
+flatpak
 #backgrounds
 #configs
 #restart
