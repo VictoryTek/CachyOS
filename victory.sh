@@ -122,7 +122,7 @@ function update() {
 	echo
 	sleep 6s
 	echo	
-	sudo dnf update -y;
+	sudo pacman -Syu --noconfirm;
 	echo
 	check_exit_status
 }
@@ -136,31 +136,21 @@ function debloat() {
 	echo
 
 	sleep 6s
-	PKGS=(
-	'gnome-clocks'
-	'gnome-maps'
-	'simple-scan'
-	'gnome-weather'
-	'gnome-boxes'
-	'totem'
-	'rhythmbox'
-	#'blender'
-	#'mediawriter'
-	'gameconqueror'
-	'inkscape'
-	#'kdenlive'
-	#'obs-studio'
-	'scummvm'
-	'gnome-shell-extension-arc-menu'
-	'gnome-shell-extension-dash-to-panel'
-	'gnome-shell-extension-desktop-icons'
 
+	PKGS=(
+	'totem'
+    'totem-pl-parser'
+    'cachyos-fish-config'
+    'fish'
+    'fish-autopair'
+    'fish-pure-prompt'
+    'fisher'
 
 	)
 
 for PKG in "${PKGS[@]}"; do
     echo "REMOVING: ${PKG}"
-    sudo dnf remove "$PKG" -y
+    sudo pacman -Rs "$PKG" --noconfirm
 done
 	echo
 	check_exit_status
@@ -178,125 +168,76 @@ sleep 6s
 
 PKGS=(
 'alacarte'
-#'autoconf' # build
-#'automake' # build
-'autojump'
-'breeze-cursor-theme'
+'bitwarden'
+'brave-bin'
+'breeze'
 'bpytop'
 'celluloid' # video players
-#'dkms'
-#'dnf-plugins-core'
-'chrome-gnome-shell'
 'dconf-editor'
 'discord'
 'filelight'
-'fira-code-fonts'
-#'flex'
+'ttf-fira-code'
+'gamemode'
 'gimp' # Photo editing
+'gnome-browser-connector'
 'gparted' # partition management
 'gwenview'
-'gydl'
-#'haveged'
-'htop'
-'inxi'
-#'kcodecs'
-'kernel-devel'
 'kmail'
 'kmag'
-#'layer-shell-qt'
-#'lzop'
-#'m4'
-'mono-complete'
-#'nodejs'
-#'npm'
+'mpv'
+'mono'
 'ncdu'
-'NetworkManager'
-#'meson'
+'meson'
 'onboard'
-#'patch'
-#'pkgconf'
-'powerline-fonts'
+'popsicle'
+'prismlauncher'
 'progress'
-'remmina'
-'snapper'
-'stacer'
+'snap-pac'
 'starship'
 'swtpm'
 'terminator'
-'terminus-font'
-'timeshift'
-'tldr'
+'ttf-terminus-nerd'
 'trash-cli'
-'unrar'
-#'util-linux-user'
 'ufw'
 'variety'
-'@virtualization'
-#'wireplumber'
-'youtube-dl'
+'virtualbox'
+'yay'
+'gnome-shell-extensions'
+'gnome-shell-extension-appindicator'
 'gnome-shell-extension-dash-to-dock'
 'gnome-shell-extension-caffeine'
-#'gnome-shell-extension-vitals-git'
-#'gnome-shell-extension-gnome-ui-tune'
-#'gnome-shell-extension-impatience-git'
-#'gnome-shell-extension-no-annoyance-git'
-#'gnome-shell-extension-tiling-assistant'
-#'gnome-shell-extension-extension-list'
+'gnome-shell-extension-vitals'
+'gnome-shell-extension-gnome-ui-tune-git'
+'gnome-shell-extension-tiling-assistant'
 
 
 )
 
 for PKG in "${PKGS[@]}"; do
     echo "INSTALLING: ${PKG}"
-    sudo dnf install "$PKG" -y
+    sudo pacman -S "$PKG" --noconfirm
 done
 
+# Installing AUR Packages
+PKGS=(
+'autojump'
+'bibata-cursor-theme'
+'gydl-git'
+
+
+)
+
+for PKG in "${PKGS[@]}"; do
+    echo "INSTALLING: ${PKG}"
+    sudo yay -S "$PKG" --noconfirm
+done
 	
 	# Flatpaks
-	#flatpak install flathub com.system76.Popsicle -y
-    flatpak install flathub com.bitwarden.desktop -y
-	flatpak install flathub com.usebottles.bottles -y
-	#flatpak install flathub com.brave.Browser -y
-	flatpak install flathub nl.hjdskes.gcolor3 -y
-	flatpak install flathub io.github.shiftey.Desktop -y
-	flatpak install flathub org.prismlauncher.PrismLauncher -y
-	flatpak install flathub com.simplenote.Simplenote -y
-    flatpak install flathub com.vscodium.codium -y
+	flatpak install flathub io.github.shiftey.Desktop --noconfirm
+	flatpak install flathub com.simplenote.Simplenote --noconfirm
+    flatpak install flathub com.vscodium.codium --noconfirm
 	sleep 3s
 
-	#Extensions
-
-	#Tiling-Assistant
-	cd ~
-	git clone https://github.com/Leleat/Tiling-Assistant.git && cd Tiling-Assistant/scripts
-	chmod +x build.sh
-	./build.sh -i
-	sleep 3s
-
-	#Extension-list
-	cd ~
-	git clone https://github.com/tuberry/extension-list.git && cd extension-list
-	make && make install
-	sleep 3s
-
-	#Tray-Icons-Reloaded
-	cd ~
-	git clone https://github.com/MartinPL/Tray-Icons-Reloaded.git
-	mv $HOME/Tray-Icons-Reloaded ~/.local/share/gnome-shell/extensions/trayIconsReloaded@selfmade.pl
-	sleep 3s
-
-	#Gnome 4x Overview UI Tune
-	cd ~
-	git clone https://github.com/axxapy/gnome-ui-tune.git
-	mv $HOME/gnome-ui-tune ~/.local/share/gnome-shell/extensions/gnome-ui-tune@itstime.tech
-	sleep 3s
-
-	#Vitals
-	cd ~
-	git clone https://github.com/corecoding/Vitals.git
-	mv $HOME/Vitals ~/.local/share/gnome-shell/extensions/Vitals@CoreCoding.com
-	sleep 3s
-	check_exit_status
 }
 
 # Put the wallpaper
@@ -378,11 +319,9 @@ function restart() {
 }
 
 greeting
-hostname
-mirror
 update
 debloat
 install
-backgrounds
-configs
-restart
+#backgrounds
+#configs
+#restart
