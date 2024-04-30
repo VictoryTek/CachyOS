@@ -219,7 +219,6 @@ function aur() {
 PKGS=(
 'autojump'
 'bibata-cursor-theme'
-'gydl-git'
 'pamac-aur'
 'pamac-cli'
 'gnome-shell-extension-tiling-assistant'
