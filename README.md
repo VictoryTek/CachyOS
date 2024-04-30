@@ -9,8 +9,8 @@ exec bash
 ```
 Then clone the repo
 ```
-git clone https://github.com/VictoryTek/VictoryCachyOS
-cd VictoryCachyOS
+git clone https://github.com/VictoryTek/CachyOS
+cd CachyOS
 chmod +x victory.sh
 
 ./victory.sh
