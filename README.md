@@ -1,5 +1,6 @@
-This README contains the steps I do to install and configure a fully-functional Arch Linux after installation containing all my preferred applications and utilities. The shell scripts in this repo allow the entire process to be automated.)
+This README contains the steps I do to install and setup my usual configuration of CachyOS Linux. This installation contains all my preferred applications and utilities. The shell script in this repo allow the entire process to be automated.
 
+CachyOS comes by default with Fish shell. 
 To exit fish shell
 ```
 chsh -s /bin/bash
@@ -8,8 +9,8 @@ exec bash
 ```
 Then clone the repo
 ```
-git clone https://github.com/VictoryTek/VictoryArch
-cd VictoryArch
+git clone https://github.com/VictoryTek/VictoryCachyOS
+cd VictoryCachyOS
 chmod +x victory.sh
 
 ./victory.sh
