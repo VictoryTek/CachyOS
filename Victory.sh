@@ -95,7 +95,7 @@ echo -e "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
 	   echo "You replied $input, you are ready to start"
 	   echo
-	   echo "Starting VictoryNobara install script."
+	   echo "Starting CachyOS install & config script."
 	   echo
 	   sleep 3s
 
@@ -231,9 +231,9 @@ done
 # Flatpaks
 
 	flatpak install flathub io.github.shiftey.Desktop -y
-	flatpak install flathub com.mattjakeman.ExtensionManager
-	flatpak install flathub com.simplenote.Simplenote
-	flatpak install flathub com.vscodium.codium
+	flatpak install flathub com.mattjakeman.ExtensionManager -y
+	flatpak install flathub com.simplenote.Simplenote -y
+	flatpak install flathub com.vscodium.codium -y
 	sleep 3s
 
 }
@@ -247,7 +247,7 @@ function backgrounds() {
 	echo
 	sleep 6s
 	cd ~/
-    git clone https://gitlab.com/dwt1/wallpapers.git
+    	git clone https://gitlab.com/dwt1/wallpapers.git
 
 	check_exit_status
 }
@@ -289,16 +289,14 @@ function restart() {
             then
             	cecho
 		echo "---------------------------------------"
-		echo "----     VictoryNobara part 1      ----"
-		echo "----     has been installed!       ----"
+		echo "----   CachyOS install & config    ----"
+		echo "----        has completed!         ----"
 		echo "---------------------------------------"
 		echo
 		
 		echo Restart 
 		echo or 
 		echo restart gnome shell 
-		echo & 
-		echo run script 2, victory-finish.sh
 		echo
 		check_exit_status
 		
@@ -318,8 +316,8 @@ function restart() {
 
 greeting
 update
-#debloat
+debloat
 install
-#backgrounds
-#configs
-#restart
+backgrounds
+configs
+restart
