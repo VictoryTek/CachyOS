@@ -3,8 +3,7 @@ This README contains the steps I do to install and configure a fully-functional 
 To exit fish shell
 ```
 chsh -s /bin/bash
-or
-exec bash
+
 ```
 Then clone the repo
 ```
