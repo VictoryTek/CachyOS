@@ -4,6 +4,7 @@ To exit fish shell
 ```
 chsh -s /bin/bash
 
+exec bash
 ```
 Then clone the repo
 ```
