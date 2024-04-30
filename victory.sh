@@ -1,5 +1,5 @@
 #!/bin/bash
-# Finish Setup my Nobara Linux
+# Finish Setup my CachyOS Linux
 # Ver. 1.2
 
 #####################################################################
@@ -22,12 +22,12 @@ echo -e "    \      /  |   ||  |_   |  |   |   |_|  ||  | |__| \   /     "
 echo -e "     \____/   |___||____|  |__|    \_____ / |__|       |_|      "
 echo -e "                                                                "
 echo -e "----------------------------------------------------------------"
-echo -e "     ██   ██╗   █████╗    ██████╗   █████╗ ██████╗  █████╗      "
-echo -e "     ███  ██║  ██    ██╗  ██    ██╗██╔══██╗██   ██╗██╔══██╗     "
-echo -e "     ██║█ ██║ ██      ██╗ ██████╔═╝███████║██████╔╝███████║     "
-echo -e "     ██║ ███║  ██    ██╔╝ ██    ██╗██║  ██║██║  ██║██║  ██║     "
-echo -e "     ██║  ██║   ██████╔╝  ██████╔═╝██║  ██║██║  ██║██║  ██║     "
-echo -e "     ╚═╝  ╚═╝   ╚═════╝   ╚═════╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝     "
+echo -e "           
+echo -e "          
+echo -e "          
+echo -e "          
+echo -e "          
+echo -e "          
 echo -e "----------------------------------------------------------------"
 
 # Make sure each command executes properly
@@ -160,50 +160,50 @@ function install() {
 	echo "###############################"
 	echo
 
-sleep 6s
+    sleep 6s
 
-PKGS=(
-'alacarte'
-'bitwarden'
-'brave-bin'
-'breeze'
-'bpytop'
-'celluloid' # video players
-'dconf-editor'
-'discord'
-'filelight'
-'flatpak'
-'ttf-fira-code'
-'gamemode'
-'gimp' # Photo editing
-'gnome-browser-connector'
-'gparted' # partition management
-'gwenview'
-'kmail'
-'kmag'
-'mpv'
-'mono'
-'ncdu'
-'meson'
-'popsicle'
-'prismlauncher'
-'progress'
-'snap-pac'
-'starship'
-'swtpm'
-'terminator'
-'ttf-terminus-nerd'
-'trash-cli'
-'ufw'
-'variety'
-'virtualbox'
-'yay'
-'gnome-shell-extensions'
-'gnome-shell-extension-appindicator'
-'gnome-shell-extension-dash-to-dock'
-'gnome-shell-extension-caffeine'
-'gnome-shell-extension-vitals'
-'gnome-shell-extension-gnome-ui-tune-git'
+	PKGS=(
+	'alacarte'
+	'bitwarden'
+	'brave-bin'
+	'breeze'
+	'bpytop'
+	'celluloid' # video players
+	'dconf-editor'
+	'discord'
+	'filelight'
+	'flatpak'
+	'ttf-fira-code'
+	'gamemode'
+	'gimp' # Photo editing
+	'gnome-browser-connector'
+	'gparted' # partition management
+	'gwenview'
+	'kmail'
+	'kmag'
+	'mpv'
+	'mono'
+	'ncdu'
+	'meson'
+	'popsicle'
+	'prismlauncher'
+	'progress'
+	'snap-pac'
+	'starship'
+	'swtpm'
+	'terminator'
+	'ttf-terminus-nerd'
+	'trash-cli'
+	'ufw'
+	'variety'
+	'virtualbox'
+	'yay'
+	'gnome-shell-extensions'
+	'gnome-shell-extension-appindicator'
+	'gnome-shell-extension-dash-to-dock'
+	'gnome-shell-extension-caffeine'
+	'gnome-shell-extension-vitals'
+	'gnome-shell-extension-gnome-ui-tune-git'
 
 )
 
@@ -212,16 +212,14 @@ for PKG in "${PKGS[@]}"; do
     sudo pacman -S "$PKG" --noconfirm
 done
 
-}
-
 # Installing AUR Packages
-function aur() {
-PKGS=(
-'autojump'
-'bibata-cursor-theme'
-'pamac-aur'
-'pamac-cli'
-'gnome-shell-extension-tiling-assistant'
+
+	PKGS=(
+	'autojump'
+	'bibata-cursor-theme'
+	'pamac-aur'
+	'pamac-cli'
+	'gnome-shell-extension-tiling-assistant'
 
 )
 
@@ -229,15 +227,13 @@ for PKG in "${PKGS[@]}"; do
     echo "INSTALLING: ${PKG}"
     yay -S "$PKG" --noconfirm
 done
-	
-}
 
-	# Flatpaks
-	function flatpak() {
-    flatpak install flathub io.github.shiftey.Desktop --noconfirm
-    flatpak install flathub com.mattjakeman.ExtensionManager --noconfirm
+# Flatpaks
+
+	flatpak install flathub io.github.shiftey.Desktop --noconfirm
+	flatpak install flathub com.mattjakeman.ExtensionManager --noconfirm
 	flatpak install flathub com.simplenote.Simplenote --noconfirm
-    flatpak install flathub com.vscodium.codium --noconfirm
+	flatpak install flathub com.vscodium.codium --noconfirm
 	sleep 3s
 
 }
@@ -322,10 +318,8 @@ function restart() {
 
 greeting
 update
-debloat
+#debloat
 install
-aur
-flatpak
 #backgrounds
 #configs
 #restart
