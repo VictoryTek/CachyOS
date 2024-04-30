@@ -22,12 +22,12 @@ echo -e "    \      /  |   ||  |_   |  |   |   |_|  ||  | |__| \   /     "
 echo -e "     \____/   |___||____|  |__|    \_____ / |__|       |_|      "
 echo -e "                                                                "
 echo -e "----------------------------------------------------------------"
-echo -e "           
-echo -e "          
-echo -e "          
-echo -e "          
-echo -e "          
-echo -e "          
+echo -e "          █████╗    █████╗   █████╗  ██╗ ██╗██╗   ██╗           "
+echo -e "        ██     ██╗ ██╔══██╗ ██    ██╗██║ ██║ ██╗ ██╔╝           "
+echo -e "       ██          ███████║██        ██████║  ████╔╝            "
+echo -e "        ██     ██║ ██║  ██║ ██    ██║██║ ██║   ██╔╝             "
+echo -e "          ██████╔╝ ██║  ██║  ██████╔╝██║ ██║   ██║              "
+echo -e "          ╚═════╝  ╚═╝  ╚═╝  ╚═════╝ ╚═╝ ╚═╝   ╚═╝              "
 echo -e "----------------------------------------------------------------"
 
 # Make sure each command executes properly
@@ -66,12 +66,12 @@ echo -e "    \      /  |   ||  |_   |  |   |   |_|  ||  | |__| \   /     "
 echo -e "     \____/   |___||____|  |__|    \_____ / |__|       |_|      "
 echo -e "                                                                "
 echo -e "----------------------------------------------------------------"
-echo -e "     ██   ██╗   █████╗    ██████╗   █████╗ ██████╗  █████╗      "
-echo -e "     ███  ██║  ██    ██╗  ██    ██╗██╔══██╗██   ██╗██╔══██╗     "
-echo -e "     ██║█ ██║ ██      ██╗ ██████╔═╝███████║██████╔╝███████║     "
-echo -e "     ██║ ███║  ██    ██╔╝ ██    ██╗██║  ██║██║  ██║██║  ██║     "
-echo -e "     ██║  ██║   ██████╔╝  ██████╔═╝██║  ██║██║  ██║██║  ██║     "
-echo -e "     ╚═╝  ╚═╝   ╚═════╝   ╚═════╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝     "
+echo -e "          █████╗    █████╗   █████╗  ██╗ ██╗██╗   ██╗           "
+echo -e "        ██     ██╗ ██╔══██╗ ██    ██╗██║ ██║ ██╗ ██╔╝           "
+echo -e "       ██          ███████║██        ██████║  ████╔╝            "
+echo -e "        ██     ██║ ██║  ██║ ██    ██║██║ ██║   ██╔╝             "
+echo -e "          ██████╔╝ ██║  ██║  ██████╔╝██║ ██║   ██║              "
+echo -e "          ╚═════╝  ╚═╝  ╚═╝  ╚═════╝ ╚═╝ ╚═╝   ╚═╝              "
 echo -e "----------------------------------------------------------------"
 echo -e " DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK. "
 echo -e "----------------------------------------------------------------"
@@ -230,10 +230,10 @@ done
 
 # Flatpaks
 
-	flatpak install flathub io.github.shiftey.Desktop --noconfirm
-	flatpak install flathub com.mattjakeman.ExtensionManager --noconfirm
-	flatpak install flathub com.simplenote.Simplenote --noconfirm
-	flatpak install flathub com.vscodium.codium --noconfirm
+	flatpak install flathub io.github.shiftey.Desktop -y
+	flatpak install flathub com.mattjakeman.ExtensionManager
+	flatpak install flathub com.simplenote.Simplenote
+	flatpak install flathub com.vscodium.codium
 	sleep 3s
 
 }
