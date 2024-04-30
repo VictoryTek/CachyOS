@@ -220,6 +220,7 @@ done
 	'pamac-aur'
 	'pamac-cli'
 	'gnome-shell-extension-tiling-assistant'
+	'gnome-shell-extension-background-logo'
 
 )
 
@@ -262,7 +263,7 @@ function configs() {
 	sleep 6s
    	echo
     export PATH=$PATH:~/.local/bin
-    cp -r $HOME/VictoryNobara/configs/* $HOME/.config/
+    cp -r $HOME/CachyOS/configs/* $HOME/.config/
     echo
 	# enable pre configured bashrc file
     mv $HOME/.config/bashrc $HOME/.config/.bashrc
@@ -272,12 +273,61 @@ function configs() {
     mv $HOME/.config/face $HOME/.config/.face
     mv $HOME/.config/.face $HOME
 	echo
-	# enable VM services
-	sudo systemctl start libvirtd
+	# enable VM services for Virt Manager
+	#sudo systemctl start libvirtd
+	#echo
+	#sudo systemctl enable libvirtd
+	#echo
+	cd $HOME/CachyOS/
+	git clone https://github.com/daniruiz/flat-remix
+	git clone https://github.com/daniruiz/flat-remix-gtk
+	#mkdir -p ~/.icons && mkdir -p ~/.themes
+#	cp -r flat-remix/Flat-Remix* ~/.icons/ && cp -r flat-remix-gtk/themes/Flat-Remix* ~/.themes/
+	sudo mv flat-remix/Flat-Remix* /usr/share/icons/ 
+	sudo mv flat-remix-gtk/themes/Flat-Remix* /usr/share/themes/
+	rm -rf ~/flat-remix flat-remix-gtk
+	#gsettings set org.gnome.desktop.interface gtk-theme "Flat-Remix-GTK-Blue-Dark"
+	#gsettings set org.gnome.desktop.interface icon-theme "Flat-Remix-Blue-Dark"
 	echo
-	sudo systemctl enable libvirtd
+	gsettings set org.gnome.shell favorite-apps "['brave-browser.desktop', 'cachy-browser.desktop', 'org.gnome.Nautilus.desktop', 'terminator.desktop', 'cachy-hello.desktop', 'com.simplenote.Simplenote.desktop', 'virtualbox.desktop', 'com.vscodium.codium.desktop']"
+	gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
+	gsettings set org.gnome.desktop.interface clock-format '12h'   
+	gsettings set org.gnome.desktop.interface cursor-theme 'bibata-classic'
 	echo
+	#gsettings set org.fedorahosted.background-logo-extension "True"
+	#gsettings set org.fedorahosted.background-logo-extension.logo-file "/usr/share/nobara-logos/nobara_lightbackground.svg"
+	#gsettings set org.fedorahosted.background-logo-extension.logo-file-dark "/usr/share/nobara-logos/nobara_darkbackground.svg"
     
+	check_exit_status
+}
+
+#EXTENSIONS
+function extensions() {
+
+	echo "#####################################"
+	echo "|     Enabling Gnome Extensions.    |"
+	echo "#####################################"
+	gnome-extensions enable caffeine@patapon.info
+	gnome-extensions enable dash-to-dock@micxgx.gmail.com
+	gnome-extensions enable tiling-assistant@leleat-on-github
+	gnome-extensions enable gnome-ui-tune@itstime.tech
+	
+
+	check_exit_status
+}
+
+#CLEAN UP
+function clean-up() {
+	
+	echo "##################################"
+	echo "|     Cleaning up Left Overs.    |"
+	echo "##################################"
+	echo
+	sleep 6s
+	sudo rm -rf /usr/share/backgrounds/gnome
+	echo
+	sudo rm -rf /usr/share/backgrounds/workstation
+	echo
 	check_exit_status
 }
 
@@ -320,4 +370,6 @@ debloat
 install
 backgrounds
 configs
+extensions
+clean-up
 restart
