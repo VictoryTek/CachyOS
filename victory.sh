@@ -141,6 +141,7 @@ function debloat() {
     'totem'
     'cachyos-fish-config'
     'octopi'
+	'meld'
 
 	)
 
