@@ -308,10 +308,10 @@ function extensions() {
 	echo "#####################################"
 	echo "|     Enabling Gnome Extensions.    |"
 	echo "#####################################"
-	gnome-extensions enable caffeine@patapon.info
-	gnome-extensions enable dash-to-dock@micxgx.gmail.com
-	gnome-extensions enable tiling-assistant@leleat-on-github
-	gnome-extensions enable gnome-ui-tune@itstime.tech
+	gnome-shell-extension-tool --enable caffeine@patapon.info
+	gnome-shell-extension-tool --enable dash-to-dock@micxgx.gmail.com
+	gnome-shell-extension-tool --enable tiling-assistant@leleat-on-github
+	gnome-shell-extension-tool --enable gnome-ui-tune@itstime.tech
 	
 
 	check_exit_status
