@@ -275,11 +275,7 @@ function configs() {
     mv $HOME/.config/face $HOME/.config/.face
     mv $HOME/.config/.face $HOME
 	echo
-	# enable VM services for Virt Manager
-	#sudo systemctl start libvirtd
-	#echo
-	#sudo systemctl enable libvirtd
-	#echo
+
 	cd $HOME/CachyOS/
 	git clone https://github.com/daniruiz/flat-remix
 	git clone https://github.com/daniruiz/flat-remix-gtk
@@ -289,17 +285,15 @@ function configs() {
 	sudo mv flat-remix-gtk/themes/Flat-Remix* /usr/share/themes/
 	rm -rf ~/flat-remix flat-remix-gtk
 	#gsettings set org.gnome.desktop.interface gtk-theme "Flat-Remix-GTK-Blue-Dark"
-	gsettings set org.gnome.desktop.interface icon-theme "Kora"
+	gsettings set org.gnome.desktop.interface icon-theme "kora"
 	echo
 	gsettings set org.gnome.shell favorite-apps "['brave-browser.desktop', 'cachy-browser.desktop', 'org.gnome.Nautilus.desktop', 'terminator.desktop', 'cachyos-hello.desktop', 'com.simplenote.Simplenote.desktop', 'virtualbox.desktop', 'com.vscodium.codium.desktop']"
 	gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
 	gsettings set org.gnome.desktop.interface clock-format '12h'   
 	gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'
+	gsettings set org.gnome.desktop.screensaver lock-enabled false
 	echo
-	#gsettings set org.fedorahosted.background-logo-extension "True"
-	#gsettings set org.fedorahosted.background-logo-extension.logo-file "/usr/share/nobara-logos/nobara_lightbackground.svg"
-	#gsettings set org.fedorahosted.background-logo-extension.logo-file-dark "/usr/share/nobara-logos/nobara_darkbackground.svg"
-    
+	    
 	check_exit_status
 }
 
@@ -372,6 +366,6 @@ debloat
 install
 backgrounds
 configs
-extensions
+#extensions
 clean-up
 restart
