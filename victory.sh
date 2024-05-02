@@ -290,7 +290,7 @@ function configs() {
 	#gsettings set org.gnome.desktop.interface gtk-theme "Flat-Remix-GTK-Blue-Dark"
 	gsettings set org.gnome.desktop.interface icon-theme "kora"
 	echo
-	gsettings set org.gnome.shell favorite-apps "['brave-browser.desktop', 'cachy-browser.desktop', 'org.gnome.Nautilus.desktop', 'terminator.desktop', 'cachyos-hello.desktop', 'com.simplenote.Simplenote.desktop', 'virtualbox.desktop', 'com.vscodium.codium.desktop']"
+	gsettings set org.gnome.shell favorite-apps "['brave-browser.desktop', 'cachy-browser.desktop', 'org.gnome.Nautilus.desktop', 'terminator.desktop', 'cachyos-hello.desktop', 'com.simplenote.Simplenote.desktop', 'virtualbox.desktop', 'net.lutris.desktop', 'org.prismlauncher.Prismlauncher.desktop', 'steam.desktop', 'com.vscodium.codium.desktop', 'discord.desktop']"
 	gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
 	gsettings set org.gnome.desktop.interface clock-format '12h'   
 	gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'
@@ -306,11 +306,16 @@ function extensions() {
 	echo "#####################################"
 	echo "|     Enabling Gnome Extensions.    |"
 	echo "#####################################"
-	gnome-shell-extension-tool --enable caffeine@patapon.info
-	gnome-shell-extension-tool --enable dash-to-dock@micxgx.gmail.com
-	gnome-shell-extension-tool --enable tiling-assistant@leleat-on-github
-	gnome-shell-extension-tool --enable gnome-ui-tune@itstime.tech
-	
+	gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com
+	gnome-extensions enable caffeine@patapon.info
+	gnome-extensions enable dash-to-dock@micxgx.gmail.com
+	gnome-extensions enable tiling-assistant@leleat-on-github
+	gnome-extensions enable gnome-ui-tune@itstime.tech
+	gnome-extensions enable background-logo@fedorahosted.org
+	gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com
+	gnome-extensions enable pamac-updates@manjaro.org
+	gnome-extensions enable window-list@gnome-shell-extensions.gcampax.github.com
+
 
 	check_exit_status
 }
