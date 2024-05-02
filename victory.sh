@@ -300,26 +300,6 @@ function configs() {
 	check_exit_status
 }
 
-#EXTENSIONS
-function extensions() {
-
-	echo "#####################################"
-	echo "|     Enabling Gnome Extensions.    |"
-	echo "#####################################"
-	gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com
-	gnome-extensions enable caffeine@patapon.info
-	gnome-extensions enable dash-to-dock@micxgx.gmail.com
-	gnome-extensions enable tiling-assistant@leleat-on-github
-	gnome-extensions enable gnome-ui-tune@itstime.tech
-	gnome-extensions enable background-logo@fedorahosted.org
-	gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com
-	gnome-extensions enable pamac-updates@manjaro.org
-	gnome-extensions enable window-list@gnome-shell-extensions.gcampax.github.com
-
-
-	check_exit_status
-}
-
 #CLEAN UP
 function clean-up() {
 	
@@ -374,6 +354,5 @@ debloat
 install
 backgrounds
 configs
-#extensions
 clean-up
 restart
