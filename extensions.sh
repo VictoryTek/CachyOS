@@ -369,11 +369,11 @@ function restart() {
 }
 
 greeting
-update
-debloat
-install
-backgrounds
-configs
-#extensions
-clean-up
-restart
+#update
+#debloat
+#install
+#backgrounds
+#configs
+extensions
+#clean-up
+#restart
