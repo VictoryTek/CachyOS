@@ -189,9 +189,11 @@ function install() {
 	'popsicle'
 	'prismlauncher'
 	'progress'
+	'rustdesk'
 	'snap-pac'
 	'starship'
 	'swtpm'
+	'tailscale'
 	'terminator'
 	'ttf-terminus-nerd'
 	'trash-cli'
@@ -218,11 +220,12 @@ done
 	PKGS=(
 	'autojump'
 	'bibata-cursor-theme'
-	'pamac-aur'
-	'pamac-cli'
 	'gnome-shell-extension-tiling-assistant'
 	'gnome-shell-extension-background-logo'
 	'kora-icon-theme'
+	'pamac-aur'
+	'pamac-cli'
+	'realvnc-vnc-viewer'
 
 )
 
