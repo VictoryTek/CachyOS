@@ -374,6 +374,6 @@ debloat
 install
 backgrounds
 configs
-#extensions
+extensions
 clean-up
 restart
