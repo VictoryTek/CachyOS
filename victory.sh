@@ -191,6 +191,7 @@ function install() {
 	'prismlauncher'
 	'progress'
 	'rustdesk'
+	'samba'
 	'snap-pac'
 	'starship'
 	'swtpm'
