@@ -191,7 +191,6 @@ function install() {
 	'prismlauncher'
 	'progress'
 	'rustdesk'
-	'samba'
 	'snap-pac'
 	'starship'
 	'swtpm'
@@ -298,6 +297,7 @@ function configs() {
 	gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'
 	gsettings set org.gnome.desktop.screensaver lock-enabled false
 	echo
+	sudo ufw allow sambs
 	    
 	check_exit_status
 }
