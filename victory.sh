@@ -170,6 +170,7 @@ function install() {
 	'breeze'
 	'bpytop'
 	'celluloid' # video players
+	'cifs-utils'
 	'dconf-editor'
 	'discord'
 	'filelight'
@@ -298,7 +299,7 @@ function configs() {
 	gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'
 	gsettings set org.gnome.desktop.screensaver lock-enabled false
 	echo
-	sudo ufw allow sambs
+	sudo ufw allow samba
 	    
 	check_exit_status
 }
