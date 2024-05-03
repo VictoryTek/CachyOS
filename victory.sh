@@ -184,6 +184,7 @@ function install() {
 	'kmag'
 	'mpv'
 	'mono'
+	'nautilus-share'
 	'ncdu'
 	'meson'
 	'popsicle'
