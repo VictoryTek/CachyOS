@@ -243,6 +243,7 @@ done
 	flatpak install flathub com.mattjakeman.ExtensionManager -y
 	flatpak install flathub com.simplenote.Simplenote -y
 	flatpak install flathub com.vscodium.codium -y
+	flatpak install flathub dev.deedles.Trayscale -y
 	sleep 3s
 
 }
@@ -299,7 +300,8 @@ function configs() {
 	gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'
 	gsettings set org.gnome.desktop.screensaver lock-enabled false
 	echo
-	sudo ufw allow samba
+	sudo tailscale set --operator=$USER
+	echo
 	    
 	check_exit_status
 }
